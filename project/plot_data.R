@@ -13,6 +13,8 @@ south_asia_labels <- south_asia %>%
 ggplot(data = south_asia, aes(x = date, y = life_exp, color = country)) +
   geom_line() +
   geom_text(data = south_asia_labels, aes(label = country), hjust = -0.1, size = 4) +
+  scale_y_continuous(name = 'Life expectancy (years)') + 
+  ggtitle('Changes to life expectancy by country from 2000-2025','South Asia') +
   expand_limits(x = max(south_asia$date) + 3) + 
   theme_minimal() +
-  theme(legend.position = "none")
+  theme(legend.position = "none") 
